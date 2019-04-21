@@ -1,0 +1,36 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>comment</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content></ion-refresher-content>
+  </ion-refresher>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="chatbubbles"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+  <ion-list>
+    <ion-virtual-scroll [items]="results | async">
+      <ion-item *virtualItem="let item">
+        <ion-avatar slot="start">
+          <img
+            src="https://ionicframework.com/docs/demos/api/avatar/avatar.svg"
+          />
+        </ion-avatar>
+        <ion-label text-wrap>
+          <h3>{{ item.username }}</h3>
+          <ion-text color="primary">
+            {{ item.body }}
+          </ion-text>
+          <div>
+            <ion-note>{{ item.created_at }}</ion-note>
+          </div>
+        </ion-label>
+      </ion-item>
+    </ion-virtual-scroll>
+  </ion-list>
+</ion-content>

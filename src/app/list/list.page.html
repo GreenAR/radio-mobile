@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="danger">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Radios MJS
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-searchbar placeholder="choisissez une radio"></ion-searchbar>
+  <ion-list>
+    <ion-item
+      *ngFor="let item of items"
+      (click)="goTo(item.domaine)"
+      routerDirection="forward"
+    >
+      <ion-thumbnail slot="start">
+        <img [src]="item.picture" />
+      </ion-thumbnail>
+      <ion-label>{{ item.title }}</ion-label>
+    </ion-item>
+  </ion-list>
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

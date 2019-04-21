@@ -1,0 +1,8 @@
+{
+  "name": "fwr",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "7e5c9abc"
+}
